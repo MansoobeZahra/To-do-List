@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+h1, h2, h3 {
+  color: #333;
+}
+p {
+  color: #666;
+}
+canvas {
+  transition: all 0.3s ease-in-out;
+}
+body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #fefdfc;
+      background-image: radial-gradient(#ccc 1.5px, transparent 0.5px);
+      background-size: 20px 20px;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(to right, #fce4ec 0%, #f3e5f5 100%);
+      border-bottom: 4px dashed #f8bbd0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0 0 1rem 1rem;
+      box-shadow: 0 8px 10px rgba(0,0,0,0.1);
+    }
+
+    .spirals {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+
+    .spiral-hole {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #aaa;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+    }
+html {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+    .notepad-container {
+      max-width: 720px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.96);
+      padding: 2rem 1.5rem 6rem;
+      margin-top: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .task-ui input, .task-ui select {
+      border: 2px dashed #e0aaff;
+    }
+
+    #taskList > div {
+      background-color: #fff6fb;
+      border-left: 6px solid #f48fb1;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+    }
+
+    #taskList > div:hover {
+      transform: scale(1.02);
+      background-color: #ffeaf2;
+    }
+
+    .chart-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+   .chart-box {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: 260px;
+  transition: transform 0.3s ease; /* Optional if hover effect needed */
+  will-change: transform; /* Prevent jank */
+}
+
+.chart-box:hover {
+  transform: scale(1.01); /* Optional and mild */
+}
+
+    canvas { 
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+    /* Floating Decor Elements */
+    .floating-decor {
+      position: fixed;
+      pointer-events: none;
+      z-index: 30;
+      animation: floatUpDown 4s ease-in-out infinite;
+      opacity: 0.9;
+    }
+
+    .float-moon {
+      top: 5%;
+      left: 5%;
+      width: 140px;
+      animation-delay: 1s;
+    }
+
+    .float-star {
+      top: 12%;
+      right: 10%;
+      width: 140px;
+      animation-delay: 1s;
+    }
+
+    .float-bow {
+      bottom: 18%;
+      left: 5%;
+      width: 140px;
+      animation-delay: 2s;
+    }
+
+    .float-cat {
+      bottom: 0;
+      right: 0;
+      width: 180px;
+      animation: floatUpDown 3s ease-in-out infinite;
+    }
+
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+  .category-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+  .transition-all {
+    transition: all 0.2s ease-in-out;
+  }
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  } 

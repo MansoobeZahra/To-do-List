@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Notepad</title>
+
+  <!-- Tailwind + DaisyUI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+</head>
+
+<body class="text-base-content bg-base-100">
+
+  <!-- Decorative Spirals -->
+  <header>
+    <h1 class="text-2xl font-bold text-pink-600">My Notepad</h1>
+   <button id="themeToggle" class="btn btn-sm rounded-full bg-base-300 text-base-content shadow-md hover:scale-105 transition-transform duration-300">
+  <span id="themeIcon" class="transition-transform duration-300">💡</span>
+</button>
+
+  </header>
+
+  <!-- Main Notepad -->
+  <main class="notepad-container">
+    <div class="task-ui space-y-6">
+
+      <!-- Task Entry -->
+      <input id="taskInput" type="text" placeholder="Add a new task..." class="input w-full" />
+
+      <div class="flex flex-col md:flex-row gap-4">
+        <input id="taskDate" type="date" class="input flex-1" />
+        <select id="taskCategory" class="select flex-1">
+          <option value="">Category</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Urgent">Urgent</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <label class="flex items-center gap-3">
+        <input type="checkbox" id="isHabit" class="checkbox" />
+        <span class="text-sm">Mark as daily habit</span>
+      </label>
+
+      <button id="addBtn" class="btn btn-primary w-full rounded-full">Add Task</button>
+
+      <!-- Filter -->
+      <select id="sortFilter" class="select select-bordered w-full">
+        <option value="all">All</option>
+     <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+        <option value="habit">Habits</option>
+      </select>
+
+      <!-- Task List -->
+      <div id="taskList" class="space-y-4"></div>
+
+      <!-- Charts -->
+      <div class="flex flex-col md:flex-row gap-6 mt-8">
+      <div class="chart-box">
+          <canvas id="pieChart" height="220"></canvas>
+        </div>
+        <div class="chart-box">
+          <canvas id="barChart" height="220"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating Decorative Images -->
+  <img src="./images/floating-moon.png" alt="Moon" class="floating-decor float-moon" />
+  <img src="./images/floating-star.png" alt="Star" class="floating-decor float-star" />
+  <img src="./images/floating-bow.png" alt="Bow" class="floating-decor float-bow" />
+  <img src="./images/floating-cat.png" alt="Cat" class="floating-decor float-cat" />
+
+  <!-- JS Entry -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
