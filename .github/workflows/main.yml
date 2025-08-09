@@ -1,14 +1,9 @@
-
----
-
-## **.github/workflows/deploy.yml**
-```yaml
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Change if your default branch is different
+      - main  # Change to your default branch name if different
 
 permissions:
   contents: read
@@ -16,23 +11,29 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      # OPTIONAL: Install dependencies if you had npm/yarn (not needed for pure static HTML/CSS/JS)
+      # - name: Install dependencies
+      #   run: npm install
 
+      # No build step for static site — just upload the files
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .  # Upload the entire repo
+          path: .  # Path to your static files (index.html, styles.css, main.js, etc.)
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
