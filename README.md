@@ -12,7 +12,7 @@ A visually appealing **Task Management and Habit Tracking Web App** with categor
 
 ## Live at:
 
-- friendly-palmier-9faad3.netlify.app
+-[ Click Here ](friendly-palmier-9faad3.netlify.app)
 ## 📂 Project Structure
 ````
 ├── index.html # Main HTML file
@@ -53,5 +53,3 @@ This project is set up with GitHub Actions to auto-deploy to GitHub Pages on eac
 📜 License
 MIT License — feel free to use and modify.
  
-Copy
-Edit
